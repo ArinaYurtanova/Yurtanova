@@ -1,0 +1,49 @@
+
+namespace Yurtanova
+{
+    public class Class1
+    {
+        
+        private int[] mass;
+        public int N;
+        Class2 cl2;
+        public Class1(int N)
+        {
+            Random rand = new Random(100);
+            if (N < 10)
+            {
+                N = rand.Next(10, 20);
+            }
+            mass = new int[N];
+            for (int i = 0; i < mass.Length; i++)
+            {
+                mass[i] = rand.Next(1, 20);
+
+            }
+        }
+
+        public int method1()
+        {
+            int k = 0;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if ( mass[i] % 2 == 0) k++;
+            }
+            return k;
+        }
+
+        public string method1(string str, int N)
+        {
+            
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if (mass[i] > 0 && mass[i] % N == 0)
+                {
+                    str += mass[i] + " ";
+                }
+            }
+            
+            return str;
+        }
+    }
+}
